@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_myparcelasia_shipping">
+        <observer name="myparcelasia_config_sender_details_api" instance="Myparcelasia\Shipping\Observer\Config\Backend\SenderDetails\LoadFromApiObserver"/>
+    </event>
+</config>

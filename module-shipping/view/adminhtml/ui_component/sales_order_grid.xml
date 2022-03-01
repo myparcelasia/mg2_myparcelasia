@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="mpa_shipping_estimate_quote">
+                <settings>
+                    <type>mpa_shipping_estimate_quote</type>
+                    <label translate="true">MyParcel Asia - Download Connote</label>
+                    <!-- <url path="gdex_shipping/estimate/massQuote"/> -->
+                </settings>
+            </action>
+            <!-- <action name="gdex_shipping_shipment_new">
+                <settings>
+                    <type>gdex_shipping_shipment_new</type>
+                    <label translate="true">GDEX - Create Shipment</label>
+                    <url path="gdex_shipping/consignment/massNew"/>
+                </settings>
+            </action> -->
+        </massaction>
+    </listingToolbar>
+    <columns name="sales_order_columns">
+        <column name="mpa_connote">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">MyParcel Asia Consignment</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

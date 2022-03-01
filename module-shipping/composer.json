@@ -1,0 +1,21 @@
+{
+    "name": "myparcelasia/module-shipping",
+    "description": "Magento 2 integration for MyParcel Asia Sdn Bhd",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "MPA"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Myparcelasia\\Shipping\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

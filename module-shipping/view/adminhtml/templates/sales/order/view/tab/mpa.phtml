@@ -1,0 +1,160 @@
+<?php
+/** @var \Myparcelasia\Shipping\Block\Adminhtml\Sales\Order\View\Tab\Myparcelasia $block */
+
+/**
+ * @var \Myparcelasia\Shipping\Model\Sales\Order $order
+ */
+// $order = $block->getOrder();
+
+// $form = [
+//     'action' => $block->getUrl('gdex_shipping/ajax_estimate/quote'),
+// ];
+?>
+<div
+  id="mpa-shipping-estimate-calculator"
+  class="entry-edit form-inline"
+>
+  <div class="fieldset-wrapper">
+    <div class="fieldset-wrapper-title">
+      <strong class="title">
+        <span><?php echo __('Shipping Rates'); ?></span>
+      </strong>
+    </div>
+    <div class="admin__fieldset-wrapper-content">
+      <fieldset class="admin__fieldset">
+        <div class="admin__field required">
+          <label
+            for="mpa-shipping-estimate-postcode"
+            class="label admin__field-label"
+          >
+            <span><?php echo __('Sender Postcode'); ?></span>
+          </label>
+          <div class="admin__field-control control">
+            <input
+              type="text"
+              id="mpa-shipping-estimate-postcode"
+              class="input-text admin__control-text required-entry"
+              value="<?php //echo $block->getEstimatePostcode(); ?>"
+              disabled
+            >
+          </div>
+        </div>
+        <div class="admin__field required">
+          <label
+            for="mpa-shipping-estimate-country"
+            class="label admin__field-label"
+          >
+            <span><?php echo __('Country'); ?></span>
+          </label>
+          <div class="admin__field-control control">
+            <input
+              type="text"
+              id="mpa-shipping-estimate-country"
+              class="input-text admin__control-text required-entry"
+              value="<?php //echo $block->getEstimateCountry()->getName(); ?>"
+              disabled
+            >
+          </div>
+        </div>
+        <div class="admin__field required">
+          <label
+            for="mpa-shipping-estimate-weight"
+            class="label admin__field-label"
+          >
+            <span><?php echo __('Weight (KG)'); ?></span>
+          </label>
+          <div class="admin__field-control control">
+            <input
+              type="text"
+              id="mpa-shipping-estimate-weight"
+              class="input-text admin__control-text required-entry"
+              value="<?php //echo $block->getEstimateWeight(); ?>"
+              disabled
+            >
+          </div>
+        </div>
+        <div class="admin__field required">
+          <label
+            for="mpa-shipping-estimate-rate"
+            class="label admin__field-label"
+          >
+            <span><?php echo __('Rate (RM)'); ?></span>
+          </label>
+          <div class="admin__field-control control">
+            <input
+              type="text"
+              id="mpa-shipping-estimate-rate"
+              class="input-text admin__control-text required-entry"
+              value="<?php //echo $block->getEstimateRate(); ?>"
+              disabled
+            >
+            <div class="note admin__field-note">
+              <!-- Quoted at <time>{{ quotedAt }}</time> -->
+            </div>
+          </div>
+        </div>
+        <div class="admin__field">
+          <label class="label admin__field-label">&nbsp;</label>
+          <div class="admin__field-control">
+            <button
+              type="button"
+              class="action-default scalable"
+              @click="submit"
+            >
+              <span><?php echo __('Get Latest Quote'); ?></span>
+            </button>
+            <a
+              class="action-default scalable"
+              href="<?php //echo $block->getUrl('gdex_shipping/shipment/new', ['_query' => ['orders' => [$order->getId()]]]); ?>"
+            >
+              <span><?php echo __('Create Shipment'); ?></span>
+            </a>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<script>
+//   require([
+//     'lodash',
+//     'vue',
+//     'jquery',
+//     'jquery/ui'
+//   ], function (_, Vue, $) {
+//     var $calculator = $('#gdex-shipping-estimate-calculator')
+
+//     new Vue({
+//       el: $calculator[0],
+
+//       data: {
+//         estimate: <?php echo $block->getEstimateRate(); ?>,
+//         quotedAt: "<?php echo $block->getEstimateQuotedAt(); ?>"
+//       },
+
+//       methods: {
+//         submit: function () {
+//           var vm = this
+
+//           $.ajax({
+//             showLoader: true,
+//             url: "<?php echo $form['action'] ?>",
+//             data: {
+//               orderId: <?php echo $order->getId(); ?>,
+//               save: true
+//             }
+//           }).done(function (responseBody) {
+//             vm.estimate = responseBody.data.estimate
+//             vm.quotedAt = responseBody.data.quotedAt
+//           }).fail(function (xhr) {
+//             if (xhr.responseJSON && xhr.responseJSON.message) {
+//               alert(xhr.responseJSON.message)
+//             } else {
+//               alert('System error, please try again')
+//             }
+//           })
+//         }
+//       }
+//     })
+//   })
+</script>

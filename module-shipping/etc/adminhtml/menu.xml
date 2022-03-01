@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Myparcelasia_Shipping::menu"
+            title="MyParcel Asia Settings"
+            translate="title"
+            module="Myparcelasia_Shipping"
+            sortOrder="100"
+            parent="Magento_Sales::sales"
+            resource="Myparcelasia_Shipping::menu"
+        />
+
+        <add
+            id="Myparcelasia_Shipping::menu_consignments"
+            title="Consignments"
+            translate="title"
+            module="Myparcelasia_Shipping"
+            sortOrder="10"
+            parent="Myparcelasia_Shipping::menu"
+            action="Myparcelasia_Shipping/consignment"
+            resource="Myparcelasia_Shipping::menu_consignments"
+        />
+
+        <add
+            id="Myparcelasia_Shipping::menu_pick_ups"
+            title="Pick Ups"
+            translate="title"
+            module="Myparcelasia_Shipping"
+            sortOrder="20"
+            parent="Myparcelasia_Shipping::menu"
+            action="Myparcelasia_Shipping/pickup"
+            resource="Myparcelasia_Shipping::menu_pick_ups"
+        />
+
+        <add
+            id="Myparcelasia_Shipping::menu_invoices"
+            title="Invoices"
+            translate="title"
+            module="Myparcelasia_Shipping"
+            sortOrder="30"
+            parent="Myparcelasia_Shipping::menu"
+            action="Myparcelasia_Shipping/invoice"
+            resource="Myparcelasia_Shipping::menu_invoices"
+        />
+    </menu>
+</config>

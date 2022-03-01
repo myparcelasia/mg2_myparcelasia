@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="myparcelasia_shipping" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1000" translate="label">
+            <label>MyParcel Asia Settings</label>
+            <tab>sales</tab>
+            <resource>Myparcelasia_Shipping::config_myparcelasia_shipping</resource>
+            <group id="api" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>API</label>
+                <attribute type="expanded">1</attribute>
+                <field id="user_access_token" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+                    <label>API Key</label>
+                    <comment>Go to &lt;a href=&quot;https://app.myparcelasia.com/secure/integration_add_new&quot; target=&quot;_blank&quot;&gt;MyParcel Asia Integration&lt;/a&gt; page, generate and obtain your API key.</comment>
+                    <!-- <backend_model>Myparcelasia\Shipping\Model\Config\Backend\Api\Token</backend_model> -->
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="sender_details" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+                <label>Sender Details</label>
+                <field id="load_from_api" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Use user detail from MyParcel Asia App</label>
+                    <comment>Choose &quot;No&quot; to override sender details below.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="name" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+                    <label>Name</label>
+                    <frontend_class>input-overridable</frontend_class>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="email" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label" type="text">
+                    <label>Email</label>
+                    <frontend_class>input-overridable</frontend_class>
+                    <validate>required-entry validate-email</validate>
+                </field>
+                <field id="mobile_number" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="text">
+                    <label>Mobile Number</label>
+                    <frontend_class>input-overridable</frontend_class>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="address1" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="text">
+                    <label>Address 1</label>
+                    <frontend_class>input-overridable</frontend_class>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="address2" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="60" translate="label" type="text">
+                    <label>Address 2</label>
+                    <frontend_class>input-overridable</frontend_class>
+                </field>
+                <field id="postal_code" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label" type="text">
+                    <label>Postcode</label>
+                    <frontend_class>input-overridable</frontend_class>
+                    <validate>required-entry</validate>
+                </field>
+                <!-- <field id="location_id" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label" type="select">
+                    <label>Location</label>
+                    <frontend_class>input-overridable</frontend_class>
+                    <source_model>Myparcelasia\Shipping\Model\Config\Source\SenderDetails\LocationId</source_model>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="location" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="90" translate="label" type="text">
+                    <label>Location</label>
+                    <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\Location</frontend_model>
+                    <frontend_class>input-overridable</frontend_class>
+                    <validate>required-entry</validate>
+                </field> -->
+                <field id="city" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="100" translate="label" type="text">
+                    <label>City</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\City</frontend_model> -->
+                    <validate>required-entry</validate>
+                </field>
+                <field id="state" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="110" translate="label" type="text">
+                    <label>State</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\State</frontend_model> -->
+                    <validate>required-entry</validate>
+                </field>
+                <field id="country" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label" type="text">
+                    <label>Country</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\Country</frontend_model> -->
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <!-- <group id="consignment" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label">
+                <label>Consignment</label>
+                <field id="parcel_type" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Parcel Type</label>
+                    <comment>Default parcel type used for shipping rate quote and consignment creation.</comment>
+                    <source_model>Myparcelasia\Shipping\Model\Config\Source\Consignment\ParcelType</source_model>
+                    <validate>required-entry</validate>
+                </field>
+            </group> -->
+            <group id="payment" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label">
+                <label>Payment</label>
+                <field id="balance" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+                    <label>Payment Type</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\Wallet\Balance</frontend_model> -->
+                </field>
+            </group>
+            <group id="domestic" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label">
+                <label>Domestic Provider</label>
+                <field id="poslaju" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="checkbox">
+                    <label>Poslaju</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\Wallet\Balance</frontend_model> -->
+                </field>
+            </group>
+            <group id="international" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label">
+                <label>International Provider</label>
+                <field id="janio" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="checkbox">
+                    <label>Janio</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\Wallet\Balance</frontend_model> -->
+                </field>
+            </group>
+            <group id="sdd" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label">
+                <label>Same Day Delivery Provider</label>
+                <field id="grab" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="checkbox">
+                    <label>Grab</label>
+                    <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\Wallet\Balance</frontend_model> -->
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
