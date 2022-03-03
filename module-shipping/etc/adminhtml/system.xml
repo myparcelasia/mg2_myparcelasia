@@ -11,7 +11,7 @@
                 <field id="user_access_token" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
                     <label>API Key</label>
                     <comment>Go to &lt;a href=&quot;https://app.myparcelasia.com/secure/integration_add_new&quot; target=&quot;_blank&quot;&gt;MyParcel Asia Integration&lt;/a&gt; page, generate and obtain your API key.</comment>
-                    <!-- <backend_model>Myparcelasia\Shipping\Model\Config\Backend\Api\Token</backend_model> -->
+                    <backend_model>Myparcelasia\Shipping\Model\Config\Backend\Api\Token</backend_model>
                     <validate>required-entry</validate>
                 </field>
             </group>
@@ -23,7 +23,7 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <validate>required-entry</validate>
                 </field>
-                <field id="name" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
+                <field id="fullname" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="text">
                     <label>Name</label>
                     <frontend_class>input-overridable</frontend_class>
                     <validate>required-entry</validate>
@@ -33,48 +33,36 @@
                     <frontend_class>input-overridable</frontend_class>
                     <validate>required-entry validate-email</validate>
                 </field>
-                <field id="mobile_number" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="text">
+                <field id="phone" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label" type="text">
                     <label>Mobile Number</label>
                     <frontend_class>input-overridable</frontend_class>
                     <validate>required-entry</validate>
                 </field>
-                <field id="address1" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="text">
+                <field id="sender_address_line_1" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="text">
                     <label>Address 1</label>
                     <frontend_class>input-overridable</frontend_class>
                     <validate>required-entry</validate>
                 </field>
-                <field id="address2" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="60" translate="label" type="text">
+                <field id="sender_address_line_2" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="60" translate="label" type="text">
                     <label>Address 2</label>
                     <frontend_class>input-overridable</frontend_class>
                 </field>
-                <field id="postal_code" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label" type="text">
+                <field id="sender_postcode" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label" type="text">
                     <label>Postcode</label>
                     <frontend_class>input-overridable</frontend_class>
                     <validate>required-entry</validate>
                 </field>
-                <!-- <field id="location_id" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label" type="select">
-                    <label>Location</label>
-                    <frontend_class>input-overridable</frontend_class>
-                    <source_model>Myparcelasia\Shipping\Model\Config\Source\SenderDetails\LocationId</source_model>
-                    <validate>required-entry</validate>
-                </field>
-                <field id="location" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="90" translate="label" type="text">
-                    <label>Location</label>
-                    <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\Location</frontend_model>
-                    <frontend_class>input-overridable</frontend_class>
-                    <validate>required-entry</validate>
-                </field> -->
-                <field id="city" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="100" translate="label" type="text">
+                <field id="sender_city" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="100" translate="label" type="text">
                     <label>City</label>
                     <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\City</frontend_model> -->
                     <validate>required-entry</validate>
                 </field>
-                <field id="state" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="110" translate="label" type="text">
+                <field id="sender_state" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="110" translate="label" type="text">
                     <label>State</label>
                     <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\State</frontend_model> -->
                     <validate>required-entry</validate>
                 </field>
-                <field id="country" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label" type="text">
+                <field id="sender_country" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="120" translate="label" type="text">
                     <label>Country</label>
                     <!-- <frontend_model>Myparcelasia\Shipping\Block\Adminhtml\System\Config\SenderDetails\Country</frontend_model> -->
                     <validate>required-entry</validate>

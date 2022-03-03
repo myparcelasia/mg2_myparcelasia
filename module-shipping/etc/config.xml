@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <myparcelasia_shipping>
+            <timezone>Asia/Kuala_Lumpur</timezone>
+            <api>
+                <user_access_token/>
+            </api>
+            <production_api>
+                <url>https://uat-app.mpa.lt/apiv3/</url>
+            </production_api>
+            <testing_api>
+                <url>https://uat-app.mpa.lt/apiv3/</url>
+            </testing_api>
+            <sender_details>
+                <load_from_api>1</load_from_api>
+            </sender_details>
+            <testing>0</testing>
+        </myparcelasia_shipping>
+    </default>
+</config>
