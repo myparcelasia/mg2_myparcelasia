@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- <preference for="Magento\Sales\Model\Order" type="Myparcelasia\Shipping\Model\Sales\Order" /> -->
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mpa_shipping_consignment_grid_data_source" xsi:type="string">Myparcelasia\Shipping\Model\ResourceModel\Consignment\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Myparcelasia\Shipping\Logger\Api\Myparcelasia\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+
+    <type name="Myparcelasia\Shipping\Logger\Api\Myparcelasia\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">mpa-api</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="handler" xsi:type="object">Myparcelasia\Shipping\Logger\Api\Myparcelasia\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- <virtualType name="Myparcelasia\Shipping\Model\ResourceModel\Consignment\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mpa_shipping_consignment</argument>
+            <argument name="resourceModel" xsi:type="string">Myparcelasia\Shipping\Model\ResourceModel\Consignment</argument>
+        </arguments>
+    </virtualType> -->
+
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="mpa_shipping_estimate" xsi:type="string">sales_order.mpa_shipping_estimate</item>
+                <!-- <item name="gdex_shipping_estimate_quoted_at" xsi:type="string">sales_order.gdex_shipping_estimate_quoted_at</item>
+                <item name="gdex_shipping_consignment_number" xsi:type="string">sales_order.gdex_shipping_consignment_number</item> -->
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
